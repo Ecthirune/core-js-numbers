@@ -205,7 +205,7 @@ function isPrime(n) {
   if (n <= 1) {
     return false;
   }
-  for (let i = 2; i <= Math.sqrt(n); i++) {
+  for (let i = 2; i <= Math.sqrt(n); i += 1) {
     if (n % i === 0) {
       return false;
     }
@@ -230,7 +230,7 @@ function isPrime(n) {
  */
 function toNumber(value, def) {
   const convertedValue = Number(value);
-  if (isNaN(convertedValue)) {
+  if (Number.isNaN(convertedValue)) {
     return def;
   }
   return convertedValue;
@@ -274,7 +274,7 @@ function getFibonacciNumber(index) {
   let a = 0;
   let b = 1;
   let c;
-  for (let i = 2; i <= index; i++) {
+  for (let i = 2; i <= index; i += 1) {
     c = a + b;
     a = b;
     b = c;
@@ -295,7 +295,7 @@ function getFibonacciNumber(index) {
  */
 function getSumToN(n) {
   let sum = 0;
-  for (let i = 1; i <= n; i++) {
+  for (let i = 1; i <= n; i += 1) {
     sum += i;
   }
   return sum;
@@ -315,8 +315,8 @@ function getSumToN(n) {
 function getSumOfDigits(num) {
   const someString = num.toString();
   let sum = 0;
-  for (let i = 0; i < someString.length; i++) {
-    sum += parseInt(someString[i]);
+  for (let i = 0; i < someString.length; i += 1) {
+    sum += parseInt(someString[i], 10);
   }
   return sum;
 }
@@ -333,15 +333,16 @@ function getSumOfDigits(num) {
  *   15  => false
  */
 function isPowerOfTwo(num) {
-  if (num <= 0) {
+  let result = num;
+  if (result <= 0) {
     return false;
   }
 
-  while (num > 1) {
-    if (num % 2 !== 0) {
+  while (result > 1) {
+    if (result % 2 !== 0) {
       return false;
     }
-    num /= 2;
+    result /= 2;
   }
 
   return true;
@@ -656,11 +657,11 @@ function getHypotenuse(a, b) {
  * 15 => 8
  */
 function getCountOfOddNumbers(number) {
-  number = Math.abs(number);
+  const result = Math.abs(number);
   let count = 0;
-  for (let i = 0; i <= number; i++) {
+  for (let i = 0; i <= result; i += 1) {
     if (i % 2 !== 0) {
-      count++;
+      count += 1;
     }
   }
   return count;
