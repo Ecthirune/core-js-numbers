@@ -709,8 +709,7 @@ function getHypotenuse( a, b )
  * 10 => 5
  * 15 => 8
  */
-function getCountOfOddNumbers( number ) 
-{
+function getCountOfOddNumbers( number ) {
   number = Math.abs(number);
   let count = 0;
   for (let i = 0; i<= number; i++)
